@@ -1,0 +1,153 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+header{
+    background: rgb(42, 43, 41);
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    width: 100%;
+    box-sizing: border-box;
+    transition: 0.5s ease-in-out;
+}
+header .logo{
+    color: #fff;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+    float: left;
+    font-weight: bold;
+}
+header .navbar{
+    float: right;
+}
+header .navbar ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+header .navbar ul li.sub-menu:before{
+    content: '\f0d7';
+    font-family: fontAwesome;
+    position: absolute;
+    line-height: 50px;
+    color: #fff;
+    right: 5px;
+}
+.nav-area.hide{
+    transition: 0.5s ease-in-out;
+    transform: translateY(-100%);
+}
+.nav-area .channel{
+    transition: 0.5s ease-in-out;
+    position: relative;
+}
+header .navbar ul li.active.sub-menu:before{
+    content: '\f0d8';
+}
+header .navbar ul li{
+    list-style: none;
+    position: relative;
+}
+header .navbar ul li ul{
+    position: absolute;
+    left: 0;
+    background: #333;
+    display: none;
+}
+header .navbar ul li.active ul{
+    display: block;
+    
+}
+header .navbar ul li ul li{
+    display: block;
+    width: 180px;
+}
+header .navbar ul li a{
+    height: 50px;
+    line-height: 50px;
+    padding: 0 20px;
+    color: #fff;
+    text-decoration: none;
+    display: block;
+}
+header .navbar ul li a:hover,
+header .navbar ul li a.active{
+    color: #fff;
+    background: #2196f3;
+}
+.menu-toggle{
+    color: #fff;
+    float: right;
+    line-height: 50px;
+    font-size: 24px;
+    cursor: pointer;
+    display: none;
+}
+
+section{
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+}
+section.sec1{
+    background: url(/img/three-children-sitting-on-stairs-1212805.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+section.sec2{
+    padding: 100px;
+    height: auto;
+}
+section.sec2 h1{
+    margin: 0;
+    padding: 0;
+    font-size: 60px;
+    color: #262626;
+}
+section.sec2 p{
+    font-size: 18px;
+}
+section.sec3{
+    background: url(/img/action-blur-car-child-386009.jpg) no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+@media(max-width:991px){
+    header{
+        padding: 0 20px;
+    }
+    .menu-toggle{
+        display: block;
+    }
+    header .navbar{
+        position: absolute;
+        width: 100%;
+        height: calc(100vh- 50px);
+        background: #333;
+        top: 50px;
+        left: -100%;
+        transition: 0.5s;
+    }
+    header .navbar.active{
+        height: max-content(500px);
+        left: 0;
+    }
+    header .navbar ul{
+        display: block;
+        text-align: center;
+    }
+    header .navbar ul li a{
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    }
+    header .navbar ul li.active ul{
+        position: relative;
+        background: #003e6f;
+    }
+    header .navbar ul li ul li{
+        width: 100%;
+    }
+}
